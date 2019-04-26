@@ -12,19 +12,17 @@
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
         <!--<a routerLink="." >Cats photos</a>-->
-        <a mat-list-item routerLink="." ><mat-icon>sentiment_satisfied_alt</mat-icon>Cats profiles</a>
-        <a mat-list-item routerLink="." ><mat-icon>photo_library</mat-icon>Cats memes</a>
-        <a mat-list-item routerLink="." ><mat-icon>insert_emoticon</mat-icon>Adopt a lonely cat</a>
-        <a mat-list-item routerLink="." ><mat-icon>attach_money</mat-icon>Cats foundations</a>
-        <a mat-list-item routerLink="." ><mat-icon>live_help</mat-icon>FAQ</a>
-        <a mat-list-item routerLink="." ><mat-icon>mail</mat-icon>Contact with us</a>
+        <a mat-list-item [routerLink]="routerUrls.PROFILES" ><mat-icon>sentiment_satisfied_alt</mat-icon>Cats profiles</a>
+        <a mat-list-item [routerLink]="routerUrls.MEMES" ><mat-icon>photo_library</mat-icon>Cats memes</a>
+        <a mat-list-item [routerLink]="routerUrls.ADOPT" ><mat-icon>insert_emoticon</mat-icon>Adopt a lonely cat</a>
+        <a mat-list-item [routerLink]="routerUrls.FOUNDATIONS" ><mat-icon>attach_money</mat-icon>Cats foundations</a>
+        <a mat-list-item [routerLink]="routerUrls.HELP" ><mat-icon>live_help</mat-icon>Help</a>
+        <a mat-list-item [routerLink]="routerUrls.CONTACT" ><mat-icon>mail</mat-icon>Contact with us</a>
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
       <router-outlet></router-outlet>
-      content
-      <!--<p *ngFor="let content of fillerContent">{{content}}</p>-->
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

@@ -1,5 +1,6 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import {AppRouterUrls} from './app-routing-config';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnDestroy {
+  routerUrls = AppRouterUrls;
+
   mobileQuery: MediaQueryList;
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
