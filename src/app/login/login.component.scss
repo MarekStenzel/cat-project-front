@@ -10,5 +10,9 @@ $kitty_logo: '/assets/kitty.jpg';
 
   .login-form {
     margin: 25px;
+
+    mat-card-subtitle {
+      cursor: pointer;
+    }
   }
 }
