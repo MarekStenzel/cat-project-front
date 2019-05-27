@@ -3,11 +3,13 @@ import { AuthService } from '../services/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppRoutes } from '../app-routing-config';
+import { grow } from '../animations/basicanimations';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [grow]
 })
 export class LoginComponent implements OnInit {
 
