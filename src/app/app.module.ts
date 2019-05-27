@@ -13,6 +13,12 @@ import { AdoptCatComponent } from './components/adopt-cat/adopt-cat.component';
 import { CatsFoundationsComponent } from './components/cats-foundations/cats-foundations.component';
 import { HelpComponent } from './components/help/help.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import {GraphqlModule} from './graphql/graphql.module';
+import {GraphqlConnectionService} from './graphql/graphqlconnection.service';
+import {AuthService} from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -24,15 +30,19 @@ import { ContactComponent } from './components/contact/contact.component';
     AdoptCatComponent,
     CatsFoundationsComponent,
     HelpComponent,
-    ContactComponent
+    ContactComponent,
+    UserProfileComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    GraphqlModule
   ],
-  providers: [],
+  providers: [GraphqlConnectionService, AuthService],
   bootstrap: [AppComponent],
   entryComponents: [AppComponent]
 })

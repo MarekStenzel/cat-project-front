@@ -1,0 +1,12 @@
+.user-profile {
+  height: 100%;
+  display: flex;
+  align-content: space-around;
+  .user-info {
+    margin: 25px;
+    min-width: 250px;
+    min-height: 250px;
+    width: 50%;
+    height: 50%;
+  }
+}

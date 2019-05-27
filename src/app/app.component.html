@@ -1,9 +1,9 @@
-<div class="app-container" [class.app-is-mobile]="mobileQuery.matches">
+<div class="app-container" *ngIf="loginStatus" [class.app-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary" class="toolbar">
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="app-name">Cat Project</h1>
+    <h1 class="app-name">Cats & Kittens</h1>
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container"
@@ -12,12 +12,20 @@
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
         <!--<a routerLink="." >Cats photos</a>-->
-        <a mat-list-item [routerLink]="routerUrls.PROFILES" ><mat-icon>sentiment_satisfied_alt</mat-icon>Cats profiles</a>
-        <a mat-list-item [routerLink]="routerUrls.MEMES" ><mat-icon>photo_library</mat-icon>Cats memes</a>
-        <a mat-list-item [routerLink]="routerUrls.ADOPT" ><mat-icon>insert_emoticon</mat-icon>Adopt a lonely cat</a>
-        <a mat-list-item [routerLink]="routerUrls.FOUNDATIONS" ><mat-icon>attach_money</mat-icon>Cats foundations</a>
-        <a mat-list-item [routerLink]="routerUrls.HELP" ><mat-icon>live_help</mat-icon>Help</a>
-        <a mat-list-item [routerLink]="routerUrls.CONTACT" ><mat-icon>mail</mat-icon>Contact with us</a>
+        <a mat-list-item [routerLink]="routerUrls.PROFILES" >
+          <mat-icon>sentiment_satisfied_alt</mat-icon><span>Cats profiles</span></a>
+        <a mat-list-item [routerLink]="routerUrls.MEMES" >
+          <mat-icon>photo_library</mat-icon><span>Cats memes</span></a>
+        <a mat-list-item [routerLink]="routerUrls.ADOPT" >
+          <mat-icon>insert_emoticon</mat-icon><span>Adopt a lonely cat</span></a>
+        <a mat-list-item [routerLink]="routerUrls.FOUNDATIONS" >
+          <mat-icon>attach_money</mat-icon><span>Cats foundations</span></a>
+        <a mat-list-item [routerLink]="routerUrls.HELP" >
+          <mat-icon>live_help</mat-icon><span>Help</span></a>
+        <a mat-list-item [routerLink]="routerUrls.CONTACT" >
+          <mat-icon>mail</mat-icon><span>Contact with us</span></a>
+        <a mat-list-item [routerLink]="routerUrls.USER" >
+          <mat-icon>person</mat-icon><span>User profile</span></a>
       </mat-nav-list>
     </mat-sidenav>
 
@@ -26,3 +34,4 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+<app-login *ngIf="!loginStatus"></app-login>

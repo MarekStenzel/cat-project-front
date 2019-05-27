@@ -5,7 +5,8 @@ export const AppRoutes = {
   ADOPT: 'adopt',
   FOUNDATIONS: 'foundations',
   HELP: 'help',
-  CONTACT: 'contact'
+  CONTACT: 'contact',
+  USER: 'user'
 };
 
 export const AppRouterLinks = {
@@ -16,6 +17,7 @@ export const AppRouterLinks = {
   FOUNDATIONS: [AppRoutes.FOUNDATIONS],
   HELP: [AppRoutes.HELP],
   CONTACT: [AppRoutes.CONTACT],
+  USER: [AppRoutes.USER]
 };
 
 export const AppRouterUrls = {
@@ -25,5 +27,6 @@ export const AppRouterUrls = {
   ADOPT: `/${AppRoutes.ADOPT}`,
   FOUNDATIONS: `/${AppRoutes.FOUNDATIONS}`,
   HELP: `/${AppRoutes.HELP}`,
-  CONTACT: `/${AppRoutes.CONTACT}`
+  CONTACT: `/${AppRoutes.CONTACT}`,
+  USER: `/${AppRoutes.USER}`,
 };
