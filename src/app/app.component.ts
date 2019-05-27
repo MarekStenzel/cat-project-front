@@ -1,18 +1,16 @@
-import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
-import {AppRouterUrls} from './app-routing-config';
-import {GraphqlConnectionService} from './graphql/graphqlconnection.service';
-import {AuthService} from './services/auth.service';
+import { MediaMatcher} from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
+import { GraphqlConnectionService } from './graphql/graphqlconnection.service';
+import { AuthService } from './services/auth.service';
+import { AppRouterUrls, AppRoutes } from './app-routing-config';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnDestroy, OnInit {
-
-  loginStatus = true;
-  users = [];
+export class AppComponent implements OnDestroy {
 
   routerUrls = AppRouterUrls;
 
@@ -22,6 +20,7 @@ export class AppComponent implements OnDestroy, OnInit {
 
   constructor(changeDetectorRef: ChangeDetectorRef,
               media: MediaMatcher,
+              private router: Router,
               private graphqlService: GraphqlConnectionService,
               private authService: AuthService) {
     this.graphqlService.establishConnections();
@@ -30,8 +29,9 @@ export class AppComponent implements OnDestroy, OnInit {
     this.mobileQuery.addListener(this.mobileQueryListener);
   }
 
-  ngOnInit() {
-    this.authService.users().subscribe((data) => console.log(data));
+  logout() {
+    this.authService.isAuthenticated = false;
+    this.router.navigate([AppRoutes.DEFAULT]);
   }
 
   ngOnDestroy(): void {

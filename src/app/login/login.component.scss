@@ -1,0 +1,14 @@
+$kitty_logo: '/assets/kitty.jpg';
+
+.login {
+  display: flex;
+  background-image: url($kitty_logo);
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .login-form {
+    margin: 25px;
+  }
+}

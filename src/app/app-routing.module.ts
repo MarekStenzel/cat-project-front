@@ -8,15 +8,18 @@ import { CatsFoundationsComponent } from './components/cats-foundations/cats-fou
 import { HelpComponent } from './components/help/help.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { LoginComponent } from './login/login.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
-  { path: '', component: CatsProfilesComponent },
-  { path: AppRoutes.MEMES, component: CatsMemesComponent },
-  { path: AppRoutes.ADOPT, component: AdoptCatComponent },
-  { path: AppRoutes.FOUNDATIONS, component: CatsFoundationsComponent },
-  { path: AppRoutes.HELP, component: HelpComponent },
-  { path: AppRoutes.CONTACT, component: ContactComponent },
-  { path: AppRoutes.USER, component: UserProfileComponent }
+  { path: '', component: LoginComponent },
+  { path: AppRoutes.PROFILES, component: CatsProfilesComponent, canActivate: [LoginGuard] },
+  { path: AppRoutes.MEMES, component: CatsMemesComponent, canActivate: [LoginGuard] },
+  { path: AppRoutes.ADOPT, component: AdoptCatComponent, canActivate: [LoginGuard] },
+  { path: AppRoutes.FOUNDATIONS, component: CatsFoundationsComponent, canActivate: [LoginGuard] },
+  { path: AppRoutes.HELP, component: HelpComponent, canActivate: [LoginGuard] },
+  { path: AppRoutes.CONTACT, component: ContactComponent, canActivate: [LoginGuard] },
+  { path: AppRoutes.USER, component: UserProfileComponent, canActivate: [LoginGuard] }
 ];
 
 @NgModule({

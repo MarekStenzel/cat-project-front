@@ -1,3 +1,37 @@
-<p>
-  login works!
-</p>
+<div class="login">
+  <mat-card class="login-form">
+    <mat-card-title>
+      <p *ngIf="!registerLogic">Login</p>
+      <p *ngIf="registerLogic">Register</p>
+    </mat-card-title>
+    <mat-card-subtitle (click)="switchStatus()">
+      <p *ngIf="!registerLogic">Switch to register</p>
+      <p *ngIf="registerLogic">Switch to login</p>
+    </mat-card-subtitle>
+    <mat-card-content>
+     <form [formGroup]="loginForm">
+      <p>
+        <mat-form-field>
+          <label>
+            <input type="text" matInput placeholder="Username" formControlName="username">
+          </label>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <label>
+            <input type="password" matInput placeholder="Password" formControlName="password">
+          </label>
+        </mat-form-field>
+      </p>
+
+      <div class="button">
+        <button type="submit" *ngIf="!registerLogic" mat-button (click)="login()">Login</button>
+        <button type="submit" *ngIf="registerLogic" mat-button (click)="register()">Register</button>
+      </div>
+
+     </form>
+    </mat-card-content>
+  </mat-card>
+</div>

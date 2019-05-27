@@ -1,6 +1,6 @@
 export const AppRoutes = {
   DEFAULT: '',
-  PROFILES: '',
+  PROFILES: 'profiles',
   MEMES: 'memes',
   ADOPT: 'adopt',
   FOUNDATIONS: 'foundations',

@@ -15,10 +15,10 @@ import { HelpComponent } from './components/help/help.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import {GraphqlModule} from './graphql/graphql.module';
-import {GraphqlConnectionService} from './graphql/graphqlconnection.service';
-import {AuthService} from './services/auth.service';
+import { GraphqlModule} from './graphql/graphql.module';
+import { GraphqlConnectionService } from './graphql/graphqlconnection.service';
+import { AuthService } from './services/auth.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,15 +32,15 @@ import {AuthService} from './services/auth.service';
     HelpComponent,
     ContactComponent,
     UserProfileComponent,
-    LoginComponent,
-    RegisterComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
-    GraphqlModule
+    GraphqlModule,
+    ReactiveFormsModule
   ],
   providers: [GraphqlConnectionService, AuthService],
   bootstrap: [AppComponent],
