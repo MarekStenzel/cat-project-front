@@ -16,8 +16,15 @@ export class CatsProfilesComponent implements OnInit {
     this.catApiService.cats().subscribe(
       data => {
         this.tableOfCats = data;
+        console.log(data);
       }
     );
+  }
+
+  imagePath(path: string) {
+    if (path) {
+      return `http://localhost:3000/photos/${path}`;
+    }
   }
 
 }

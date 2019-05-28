@@ -23,6 +23,9 @@ export class CatApiService {
               username
             }
             name
+            photos {
+              filename
+            }
             lonely
             popularity
             created
