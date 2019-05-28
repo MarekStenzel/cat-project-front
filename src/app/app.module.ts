@@ -19,6 +19,8 @@ import { GraphqlModule} from './graphql/graphql.module';
 import { GraphqlConnectionService } from './graphql/graphqlconnection.service';
 import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import {CatApiService} from './services/catapi.service';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -40,9 +42,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     MaterialModule,
     GraphqlModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule
   ],
-  providers: [GraphqlConnectionService, AuthService],
+  providers: [GraphqlConnectionService, AuthService, CatApiService],
   bootstrap: [AppComponent],
   entryComponents: [AppComponent]
 })

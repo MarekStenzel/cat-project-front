@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CatApiService } from '../../services/catapi.service';
 
 @Component({
   selector: 'app-cats-profiles',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatsProfilesComponent implements OnInit {
 
-  constructor() { }
+  tableOfCats = [];
+
+  constructor(private catApiService: CatApiService) {}
 
   ngOnInit() {
+    this.catApiService.cats().subscribe(
+      data => {
+        this.tableOfCats = data;
+      }
+    );
   }
 
 }

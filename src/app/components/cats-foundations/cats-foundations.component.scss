@@ -1,0 +1,9 @@
+.cats-foundations {
+  display: flex;
+  flex-flow: wrap;
+  mat-card {
+    width: 25%;
+    min-width: 250px;
+    margin: 2%;
+  }
+}

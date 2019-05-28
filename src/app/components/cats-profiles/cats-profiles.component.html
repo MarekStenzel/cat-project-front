@@ -1,3 +1,20 @@
-<p>
-  cats-profiles works!
-</p>
+<div fxLayout="row" fxLayoutAlign="center center" class="cats-profiles">
+  <mat-card *ngFor="let cat of tableOfCats">
+    <div class="photo">
+      Photo:
+    </div>
+    <div class="cat-name">
+      Cat name: {{cat.name}}
+    </div>
+    <div class="popularity">
+      Popularity: {{cat.popularity}}
+    </div>
+    <div class="added-by">
+      Added by: {{cat.user.username}}
+    </div>
+    <div class="date">
+      Date: {{cat.created}}
+    </div>
+  </mat-card>
+</div>
+

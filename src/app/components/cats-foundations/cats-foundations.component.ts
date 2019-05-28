@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CatApiService} from '../../services/catapi.service';
 
 @Component({
   selector: 'app-cats-foundations',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatsFoundationsComponent implements OnInit {
 
-  constructor() { }
+  tableOfFoundations = [];
+
+  constructor(private catApiService: CatApiService) {}
 
   ngOnInit() {
+    this.catApiService.foundations().subscribe(
+      data => {
+        this.tableOfFoundations = data;
+      }
+    );
   }
 
 }

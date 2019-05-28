@@ -1,3 +1,36 @@
-<p>
-  cats-memes works!
-</p>
+<div fxLayout="row" fxLayoutAlign="center center" class="memes-profiles">
+  <mat-card *ngFor="let meme of tableOfMemes">
+    <div class="photo">
+      Photo:
+    </div>
+    <div class="meme-name">
+      Cat name: {{meme.name}}
+    </div>
+    <div class="popularity">
+      Popularity: {{meme.popularity}}
+    </div>
+    <div class="added-by">
+      Added by: {{meme.user.username}}
+    </div>
+    <div class="date">
+      Date: {{meme.created}}
+    </div>
+  </mat-card>
+  <mat-card>
+    <div class="photo">
+      Photo:
+    </div>
+    <div class="meme-name">
+      Cat name:
+    </div>
+    <div class="popularity">
+      Popularity:
+    </div>
+    <div class="added-by">
+      Added by:
+    </div>
+    <div class="date">
+      Date:
+    </div>
+  </mat-card>
+</div>
