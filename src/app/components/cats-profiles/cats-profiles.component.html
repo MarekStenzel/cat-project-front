@@ -1,8 +1,11 @@
 <div fxLayout="row" fxLayoutAlign="center center" class="cats-profiles">
   <mat-card *ngFor="let cat of tableOfCats">
     <div class="photo">
-      <img *ngIf="cat.photos[0]" [src]="this.imagePath(cat.photos[0].filename)" alt="cat" width="250">
-      <div *ngIf="!cat.photos[0]" class="upload-photo">Upload a photo</div>
+      <img *ngIf="cat.photos[0]" [src]="this.imagePath(cat.photos[0].filename)" alt="cat" height="150" width="250" class="photo-img">
+      <div *ngIf="!cat.photos[0]" class="upload-photo">
+        Upload a photo
+        <!--<input type='file' (change)="onSelectFile($event, cat.id)">-->
+      </div>
     </div>
     <div class="cat-name">
       Cat name: {{cat.name}}
@@ -17,8 +20,5 @@
       Date: {{cat.created}}
     </div>
   </mat-card>
-
-  <img [src]="url" height="200"> <br/>
-<!--  <input type='file' (change)="onSelectFile($event)">-->
 </div>
 

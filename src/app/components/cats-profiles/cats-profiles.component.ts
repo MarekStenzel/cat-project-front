@@ -11,6 +11,8 @@ import { AuthService} from '../../services/auth.service';
 export class CatsProfilesComponent implements OnInit {
 
   tableOfCats = [];
+  catWidth: string;
+  catHeight: string;
 
   url: string;
 
@@ -21,6 +23,7 @@ export class CatsProfilesComponent implements OnInit {
   ngOnInit() {
     this.catApiService.cats().subscribe(
       data => {
+        console.log(data);
         this.tableOfCats = data;
       }
     );
@@ -34,7 +37,7 @@ export class CatsProfilesComponent implements OnInit {
 
   // uploadImage(file, catId) {
   //   const formData = new FormData();
-  //   formData.append('image', '/home/markos/Desktop/lisk.jpg');
+  //   formData.append('image', '/home/marek/Pulpit/dzikikot.jpg');
   //   let headers: HttpHeaders = new HttpHeaders();
   //   headers = headers.append('Authorization', `Bearer ${this.authService.userToken}`);
   //   headers = headers.append('Content-Type', 'multipart/form-data');
@@ -45,11 +48,10 @@ export class CatsProfilesComponent implements OnInit {
   //     {headers}).subscribe((response) => console.log(response));
   // }
   //
-  // onSelectFile(event) { // called each time file input changes
+  // onSelectFile(event, catId) { // called each time file input changes
   //   if (event.target.files && event.target.files[0]) {
-  //     const reader = new FileReader();
-  //
-  //     this.uploadImage(event.target.files[0], '5ceea90268274906c22cd536');
+  //     console.log(catId);
+  //     this.uploadImage(event.target.files[0], catId);
   //   }
   // }
 }
