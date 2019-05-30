@@ -11,6 +11,7 @@ import gql from 'graphql-tag';
 export class AuthService {
 
   isAuthenticated: boolean;
+  userToken: string;
 
   constructor(private http: HttpClient,
               private apollo: Apollo) {

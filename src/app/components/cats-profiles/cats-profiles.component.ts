@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CatApiService } from '../../services/catapi.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-cats-profiles',
@@ -10,13 +12,16 @@ export class CatsProfilesComponent implements OnInit {
 
   tableOfCats = [];
 
-  constructor(private catApiService: CatApiService) {}
+  url: string;
+
+  constructor(private catApiService: CatApiService,
+              private authService: AuthService,
+              private httpClient: HttpClient) {}
 
   ngOnInit() {
     this.catApiService.cats().subscribe(
       data => {
         this.tableOfCats = data;
-        console.log(data);
       }
     );
   }
@@ -27,4 +32,24 @@ export class CatsProfilesComponent implements OnInit {
     }
   }
 
+  // uploadImage(file, catId) {
+  //   const formData = new FormData();
+  //   formData.append('image', '/home/markos/Desktop/lisk.jpg');
+  //   let headers: HttpHeaders = new HttpHeaders();
+  //   headers = headers.append('Authorization', `Bearer ${this.authService.userToken}`);
+  //   headers = headers.append('Content-Type', 'multipart/form-data');
+  //   headers = headers.append('Cache-Control', 'no-cache');
+  //   return this.httpClient.post(
+  //     `http://localhost:3000/photos/create/cat/${catId}`,
+  //     formData,
+  //     {headers}).subscribe((response) => console.log(response));
+  // }
+  //
+  // onSelectFile(event) { // called each time file input changes
+  //   if (event.target.files && event.target.files[0]) {
+  //     const reader = new FileReader();
+  //
+  //     this.uploadImage(event.target.files[0], '5ceea90268274906c22cd536');
+  //   }
+  // }
 }

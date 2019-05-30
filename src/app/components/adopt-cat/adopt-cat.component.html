@@ -1,3 +1,20 @@
-<p>
-  adopt-cat works!
-</p>
+<div fxLayout="row" fxLayoutAlign="center center" class="lonely-cats-profiles">
+  <mat-card *ngFor="let cat of tableOfLonelyCats">
+    <div class="photo">
+      <img *ngIf="cat.photos[0]" [src]="this.imagePath(cat.photos[0].filename)" alt="cat" width="250">
+      <div *ngIf="!cat.photos[0]" class="upload-photo">Upload a photo</div>
+    </div>
+    <div class="cat-name">
+      Cat name: {{cat.name}}
+    </div>
+    <div class="popularity">
+      Popularity: {{cat.popularity}}
+    </div>
+    <div class="added-by">
+      Added by: {{cat.user.username}}
+    </div>
+    <div class="date">
+      Date: {{cat.created}}
+    </div>
+  </mat-card>
+</div>

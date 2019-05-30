@@ -14,5 +14,10 @@ $kitty_logo: '/assets/kitty.jpg';
     mat-card-subtitle {
       cursor: pointer;
     }
+
+    .error-message {
+      height: 20px;
+      color: red;
+    }
   }
 }

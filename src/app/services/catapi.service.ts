@@ -39,6 +39,34 @@ export class CatApiService {
       );
   }
 
+  public lonelyCats(): Observable<any> {
+    return this.apollo.watchQuery({
+      query: gql`
+        query lonelyCats {
+          lonelyCats {
+            id
+            user {
+              id
+              username
+            }
+            name
+            photos {
+              filename
+            }
+            lonely
+            popularity
+            created
+          }
+        }
+      `
+    })
+      .valueChanges
+      .pipe(
+        map(({data}: any) => (data && data.lonelyCats) ? data.lonelyCats : null)
+      );
+  }
+
+
   public memes(): Observable<any> {
     return this.apollo.watchQuery({
       query: gql`

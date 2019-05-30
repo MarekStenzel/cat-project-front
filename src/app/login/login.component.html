@@ -31,6 +31,9 @@
         <button type="submit" *ngIf="registerLogic" mat-button (click)="register()">Register</button>
       </div>
 
+       <div class="error-message">
+         {{this.errorMessage}}
+       </div>
      </form>
     </mat-card-content>
   </mat-card>

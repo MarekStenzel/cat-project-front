@@ -14,6 +14,7 @@ import { grow } from '../animations/basicanimations';
 export class LoginComponent implements OnInit {
 
   registerLogic = false;
+  errorMessage = '';
 
   loginForm: FormGroup;
   username: FormControl;
@@ -45,9 +46,12 @@ export class LoginComponent implements OnInit {
     const password = this.loginForm.value.password;
     this.authService.login(username, password).subscribe((data) => {
       if (data.token) {
+        this.authService.userToken = data.token;
         this.authService.isAuthenticated = true;
         this.router.navigate([AppRoutes.PROFILES]);
       }
+    }, (err) => {
+      this.errorMessage = 'Invalid credentials';
     });
   }
 

@@ -1,0 +1,14 @@
+.lonely-cats-profiles {
+  display: flex;
+  flex-flow: wrap;
+  mat-card {;
+    width: 250px;
+    margin: 2%;
+  }
+
+  .photo {
+    .upload-photo {
+      height: 166px;
+    }
+  }
+}

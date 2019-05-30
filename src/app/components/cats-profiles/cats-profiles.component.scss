@@ -1,9 +1,14 @@
 .cats-profiles {
   display: flex;
   flex-flow: wrap;
-  mat-card {
-    width: 25%;
-    min-width: 250px;
+  mat-card {;
+    width: 250px;
     margin: 2%;
+  }
+
+  .photo {
+    .upload-photo {
+      height: 166px;
+    }
   }
 }
