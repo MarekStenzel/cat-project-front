@@ -11,9 +11,6 @@ import { AuthService} from '../../services/auth.service';
 export class CatsProfilesComponent implements OnInit {
 
   tableOfCats = [];
-  catWidth: string;
-  catHeight: string;
-
   url: string;
 
   constructor(private catApiService: CatApiService,
@@ -23,7 +20,6 @@ export class CatsProfilesComponent implements OnInit {
   ngOnInit() {
     this.catApiService.cats().subscribe(
       data => {
-        console.log(data);
         this.tableOfCats = data;
       }
     );

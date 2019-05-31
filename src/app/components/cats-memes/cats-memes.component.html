@@ -1,7 +1,11 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="memes-profiles">
+<div fxLayout="row" fxLayoutAlign="center center" class="meme-profiles">
   <mat-card *ngFor="let meme of tableOfMemes">
     <div class="photo">
-      Photo:
+      <img *ngIf="meme.photos[0]" [src]="this.imagePath(meme.photos[0].filename)" alt="meme" height="150" width="250" class="photo-img">
+      <div *ngIf="!meme.photos[0]" class="upload-photo">
+        Upload a photo
+        <!--<input type='file' (change)="onSelectFile($event, cat.id)">-->
+      </div>
     </div>
     <div class="meme-name">
       Cat name: {{meme.name}}
@@ -16,21 +20,6 @@
       Date: {{meme.created}}
     </div>
   </mat-card>
-  <mat-card>
-    <div class="photo">
-      Photo:
-    </div>
-    <div class="meme-name">
-      Cat name:
-    </div>
-    <div class="popularity">
-      Popularity:
-    </div>
-    <div class="added-by">
-      Added by:
-    </div>
-    <div class="date">
-      Date:
-    </div>
-  </mat-card>
 </div>
+
+

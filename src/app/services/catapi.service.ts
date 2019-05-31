@@ -77,9 +77,12 @@ export class CatApiService {
               id
               username
             }
+            name
+            photos {
+              filename
+            }
             created
             popularity
-            name
           }
         }
       `

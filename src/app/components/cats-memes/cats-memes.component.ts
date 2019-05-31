@@ -15,8 +15,15 @@ export class CatsMemesComponent implements OnInit {
   ngOnInit() {
     this.catApiService.memes().subscribe(
       data => {
+        console.log(data);
         this.tableOfMemes = data;
       }
     );
+  }
+
+  imagePath(path: string) {
+    if (path) {
+      return `http://localhost:3000/photos/${path}`;
+    }
   }
 }
